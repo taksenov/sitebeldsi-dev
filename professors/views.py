@@ -43,6 +43,20 @@ def professorsView(request):
     """)
     professors3 = dual_job_holder.fetchall()
 
+    # ВЫБОРКА ПУНКТОВ МЕНЮ
+    menu_main = connection.cursor()
+    menu_main.execute ("""
+    SELECT * FROM beldsi_base.professors_menu_main;
+    """)
+    menuMain = menu_main.fetchall()
+
+    # ВЫБОРКА ПОД-ПУНКТОВ МЕНЮ
+    menu_item = connection.cursor()
+    menu_item.execute ("""
+    SELECT * FROM beldsi_base.professors_menu_item;
+    """)
+    menuItem = menu_item.fetchall()
+
     # Внимание! Если хочешь не иметь проблем с CSRF
     # то везде используй RequestContext!
     templ = get_template('professors.html')
@@ -53,6 +67,8 @@ def professorsView(request):
                                         'dualJobProfessors': dualJobProfessors,
                                         'professors2': professors2,
                                         'professors3': professors3,
+                                        'menuMain': menuMain,
+                                        'menuItem': menuItem,
                                        }
                                        )
                        )
