@@ -1,6 +1,7 @@
 # coding=utf-8
 from afisha.views import afishaView
 from arhiv.views import arhivView
+from blankform.views import blankForm, comment
 from docs.views import docsView
 
 from filebrowser.sites import site
@@ -42,6 +43,10 @@ urlpatterns = patterns('django.contrib.flatpages.views',
     # arhiv -----------
     url(r'^arhiv/', arhivView),
     # -----------------
+    # Ссылка на страницу опроса:
+    url(r'blankform/', blankForm),
+    url(r'commentform/', comment),
+    #-----------------------------
 # -----------------------------------------------------------
 
 # Свои приложения: ------------------------------------------

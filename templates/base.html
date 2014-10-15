@@ -19,6 +19,9 @@
 <link rel="stylesheet" href="../static/assets/css/style.css" type="text/css"/>
 <link rel="stylesheet" href="../static/assets/css/header-1.css" type="text/css"/>
 
+{% comment %} ====== custom CSS ===== {% endcomment %}
+<link rel="stylesheet" href="../static/assets/css/main.css" type="text/css"/>
+
 
 <!-- lemmon slider variable width slider for images -->
 <link rel="stylesheet" href="../static/assets/css/lemmon-slider.css" type="text/css" media="screen" />
@@ -123,6 +126,7 @@ with yours and get your fb:admis content information where the XXXX goes.
                 <li><a href="/info/">Информация</a></li>
                 <li><a href="/contact/">Контакты</a></li>
 				<li><a href="/gallery/">Фотогалерея</a></li>
+				<li><a href="/blankform/">Опрос</a></li>
                 <li class="parent"><a href="javascript:void(0)">События<i></i></a>
 					<ul>
 						<li><a href="/afisha/">Афиша</a></li>
@@ -210,5 +214,9 @@ with yours and get your fb:admis content information where the XXXX goes.
 
 <!--initialize scripts / custom scripts all pages--> 
 <script src="../static/assets/js/custom.js"></script>
+
+{% comment %} скрипт для функционала анкетирования, показывает сколько символов осталось для ввода своего предложения {% endcomment %}
+<script src="../static/assets/js/jquery.tinylimiter.js"></script>
+
 </body>
 </html>
