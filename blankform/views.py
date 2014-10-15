@@ -65,7 +65,6 @@ def comment(request):
 
     errors = []
     error = ''
-    request.session._get_or_create_session_key()
     my_session = request.session.session_key
 
     all_questions = connection.cursor()
