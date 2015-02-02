@@ -22,7 +22,9 @@ def docsView(request):
     # ВЫБОРКА ПОД-ПУНКТОВ МЕНЮ
     menu_item = connection.cursor()
     menu_item.execute ("""
-    SELECT * FROM beldsi_base.docs_menu_item;
+    SELECT * FROM beldsi_base.docs_menu_item dm
+    ORDER BY dm.name
+    ;
     """)
     menuItem = menu_item.fetchall()
 
