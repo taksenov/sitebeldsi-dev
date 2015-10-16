@@ -22,7 +22,9 @@ def infoView(request):
     # ВЫБОРКА ПОД-ПУНКТОВ МЕНЮ
     menu_item = connection.cursor()
     menu_item.execute ("""
-    SELECT * FROM beldsi_base.info_menu_item;
+    SELECT * FROM beldsi_base.info_menu_item im
+    ORDER BY im.name
+    ;
     """)
     menuItem = menu_item.fetchall()
 
